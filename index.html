@@ -4,156 +4,542 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>First Brier Care | Adult Family Home Care</title>
+
 <style>
-  :root{
-    --sage:#6f8f74;
-    --sage-dark:#54704f;
-    --cream:#faf6ef;
-    --terracotta:#d98e63;
-    --ink:#33352f;
-    --line:#e5ddcd;
-  }
-  *{box-sizing:border-box;margin:0;padding:0;}
-  body{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color:var(--ink);
-    background:var(--cream);
-    line-height:1.6;
-  }
-  a{color:inherit;text-decoration:none;}
-  img{max-width:100%;display:block;}
+:root{
+  --sage:#6f8f74;
+  --sage-dark:#54704f;
+  --cream:#faf6ef;
+  --terracotta:#d98e63;
+  --ink:#33352f;
+  --line:#e5ddcd;
+}
 
-  /* HEADER */
-  header{
-    background:#fff;
-    border-bottom:1px solid var(--line);
-    position:sticky;top:0;z-index:100;
-  }
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+  color:var(--ink);
+  background:var(--cream);
+  line-height:1.6;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+/* HEADER */
+header{
+  background:#fff;
+  border-bottom:1px solid var(--line);
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+
+.nav-wrap{
+  max-width:1100px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:16px 24px;
+  gap:20px;
+}
+
+.logo{
+  font-size:1.4rem;
+  font-weight:700;
+  color:var(--sage-dark);
+}
+
+.logo span{
+  color:var(--terracotta);
+}
+
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:28px;
+}
+
+nav a{
+  font-weight:600;
+  font-size:.95rem;
+}
+
+.nav-phone{
+  background:var(--sage);
+  color:#fff;
+  padding:10px 18px;
+  border-radius:6px;
+  font-weight:700;
+  font-size:.95rem;
+  white-space:nowrap;
+}
+
+/* HERO */
+.hero{
+  background:linear-gradient(135deg,var(--sage) 0%,var(--sage-dark) 100%);
+  color:#fff;
+  text-align:center;
+  padding:80px 24px;
+}
+
+.hero h1{
+  font-size:2.4rem;
+  margin:0 auto 16px;
+  max-width:750px;
+  line-height:1.2;
+}
+
+.hero p{
+  font-size:1.15rem;
+  max-width:600px;
+  margin:0 auto 32px;
+}
+
+.hero-ctas{
+  display:flex;
+  gap:16px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.btn{
+  display:inline-block;
+  padding:14px 30px;
+  border-radius:6px;
+  font-weight:700;
+  font-size:1rem;
+}
+
+.btn-primary{
+  background:var(--terracotta);
+  color:#fff;
+}
+
+.btn-secondary{
+  background:#fff;
+  color:var(--sage-dark);
+}
+
+/* SECTIONS */
+section{
+  padding:64px 24px;
+}
+
+.section-inner{
+  max-width:1000px;
+  margin:0 auto;
+}
+
+h2{
+  font-size:1.9rem;
+  color:var(--sage-dark);
+  margin-bottom:24px;
+  text-align:center;
+}
+
+.subtitle{
+  text-align:center;
+  color:#77796f;
+  max-width:650px;
+  margin:-16px auto 36px;
+}
+
+.card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:32px;
+  box-shadow:0 2px 8px rgba(0,0,0,.03);
+}
+
+.quad-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+}
+
+.quad-grid .card h3{
+  color:var(--sage-dark);
+  margin-bottom:10px;
+  font-size:1.15rem;
+}
+
+/* OUR HOMES */
+#homes{
+  background:#fff;
+}
+
+.home-row{
+  display:grid;
+  grid-template-columns:380px 1fr;
+  gap:0;
+  align-items:stretch;
+  border:1px solid var(--line);
+  border-radius:12px;
+  overflow:hidden;
+  margin-bottom:32px;
+  background:var(--cream);
+}
+
+.home-row:nth-of-type(even){
+  grid-template-columns:1fr 380px;
+}
+
+.home-row:nth-of-type(even) .home-photo{
+  order:2;
+}
+
+.home-photo{
+  min-height:260px;
+  background:repeating-linear-gradient(
+    45deg,
+    #eee2cd,
+    #eee2cd 10px,
+    #f5ecdc 10px,
+    #f5ecdc 20px
+  );
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:#a99a78;
+  font-weight:700;
+  padding:20px;
+}
+
+.home-photo img{
+  width:100%;
+  height:100%;
+  min-height:260px;
+  object-fit:cover;
+}
+
+.home-details{
+  padding:32px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.home-badge{
+  display:inline-block;
+  background:var(--sage);
+  color:#fff;
+  font-size:.8rem;
+  font-weight:700;
+  padding:4px 12px;
+  border-radius:20px;
+  margin-bottom:10px;
+  width:fit-content;
+}
+
+.home-details h3{
+  font-size:1.4rem;
+  color:var(--sage-dark);
+  margin-bottom:8px;
+}
+
+.home-meta{
+  color:#77796f;
+  font-size:.95rem;
+  margin-bottom:14px;
+}
+
+.home-meta strong{
+  color:var(--ink);
+}
+
+.home-actions{
+  display:flex;
+  gap:12px;
+  margin-top:12px;
+  flex-wrap:wrap;
+}
+
+.home-actions a{
+  font-size:.9rem;
+  font-weight:700;
+  padding:9px 16px;
+  border-radius:6px;
+  border:1px solid var(--sage);
+  color:var(--sage-dark);
+}
+
+.home-actions a.primary{
+  background:var(--sage);
+  color:#fff;
+}
+
+/* TRUST */
+.trust-strip{
+  background:var(--sage-dark);
+  color:#fff;
+  text-align:center;
+  padding:36px 24px;
+}
+
+.trust-strip .items{
+  max-width:900px;
+  margin:0 auto;
+  display:flex;
+  justify-content:space-around;
+  flex-wrap:wrap;
+  gap:20px;
+}
+
+.trust-strip .item{
+  font-weight:700;
+  font-size:1rem;
+}
+
+.trust-strip .item span{
+  display:block;
+  font-size:1.6rem;
+  color:var(--terracotta);
+}
+
+/* CONTACT */
+#contact{
+  background:var(--cream);
+}
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 1.2fr;
+  gap:40px;
+}
+
+.contact-info p{
+  margin-bottom:14px;
+  font-size:1.02rem;
+}
+
+.contact-info strong{
+  color:var(--sage-dark);
+}
+
+form{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+input,
+textarea{
+  width:100%;
+  padding:12px 14px;
+  border:1px solid var(--line);
+  border-radius:6px;
+  font-size:1rem;
+  font-family:inherit;
+}
+
+textarea{
+  min-height:110px;
+  resize:vertical;
+}
+
+form button{
+  background:var(--terracotta);
+  color:#fff;
+  border:none;
+  padding:14px;
+  border-radius:6px;
+  font-weight:700;
+  font-size:1rem;
+  cursor:pointer;
+}
+
+/* FOOTER */
+footer{
+  background:#2c2e28;
+  color:#c9cbc0;
+  text-align:center;
+  padding:32px 24px;
+  font-size:.9rem;
+}
+
+footer a{
+  font-weight:700;
+  color:#fff;
+}
+
+/* MOBILE */
+@media(max-width:800px){
+
   .nav-wrap{
-    max-width:1100px;margin:0 auto;
-    display:flex;align-items:center;justify-content:space-between;
-    padding:16px 24px;
+    padding:12px 16px;
+    gap:10px;
+    flex-wrap:wrap;
   }
-  .logo{font-size:1.4rem;font-weight:700;color:var(--sage-dark);}
-  .logo span{color:var(--terracotta);}
-  nav ul{list-style:none;display:flex;gap:28px;}
-  nav a{font-weight:600;font-size:.95rem;}
-  nav a:hover{color:var(--sage-dark);}
+
+  .logo{
+    font-size:1.15rem;
+    line-height:1.15;
+    flex:1;
+    white-space:normal;
+  }
+
+  nav{
+    order:3;
+    width:100%;
+  }
+
+  nav ul{
+    display:flex;
+    justify-content:space-between;
+    gap:8px;
+    width:100%;
+  }
+
+  nav a{
+    font-size:.82rem;
+    white-space:nowrap;
+  }
+
   .nav-phone{
-    background:var(--sage);color:#fff;padding:10px 18px;border-radius:6px;
-    font-weight:700;font-size:.95rem;white-space:nowrap;
+    padding:9px 12px;
+    font-size:.78rem;
   }
-  .nav-phone:hover{background:var(--sage-dark);}
 
-  /* HERO */
   .hero{
-    background:linear-gradient(135deg, var(--sage) 0%, var(--sage-dark) 100%);
-    color:#fff;text-align:center;padding:80px 24px;
+    padding:58px 18px 54px;
   }
-  .hero h1{font-size:2.4rem;margin-bottom:16px;max-width:750px;margin-left:auto;margin-right:auto;}
-  .hero p{font-size:1.15rem;max-width:600px;margin:0 auto 32px;opacity:.95;}
-  .hero-ctas{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
-  .btn{
-    display:inline-block;padding:14px 30px;border-radius:6px;font-weight:700;
-    font-size:1rem;transition:transform .15s ease;
-  }
-  .btn:hover{transform:translateY(-2px);}
-  .btn-primary{background:var(--terracotta);color:#fff;}
-  .btn-secondary{background:#fff;color:var(--sage-dark);}
 
-  /* SECTION SHELL */
-  section{padding:64px 24px;}
-  .section-inner{max-width:1000px;margin:0 auto;}
-  h2{font-size:1.9rem;color:var(--sage-dark);margin-bottom:24px;text-align:center;}
-  .subtitle{text-align:center;color:#77796f;max-width:650px;margin:-16px auto 36px;}
+  .hero h1{
+    font-size:2rem;
+    line-height:1.18;
+  }
+
+  .hero p{
+    font-size:1rem;
+    line-height:1.55;
+  }
+
+  .hero-ctas{
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .btn{
+    width:100%;
+    max-width:300px;
+  }
+
+  section{
+    padding:48px 16px;
+  }
+
+  h2{
+    font-size:1.7rem;
+  }
 
   .card{
-    background:#fff;border:1px solid var(--line);border-radius:10px;
-    padding:32px;box-shadow:0 2px 8px rgba(0,0,0,0.03);
+    padding:24px 20px;
   }
 
-  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;}
-  @media(max-width:750px){.two-col{grid-template-columns:1fr;}}
-
-  .quad-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
-  @media(max-width:750px){.quad-grid{grid-template-columns:1fr;}}
-  .quad-grid .card h3{color:var(--sage-dark);margin-bottom:10px;font-size:1.15rem;}
-
-  /* OUR HOMES */
-  #homes{background:#fff;}
-  .home-row{
-    display:grid;grid-template-columns:380px 1fr;gap:32px;
-    align-items:stretch;
-    border:1px solid var(--line);border-radius:12px;overflow:hidden;
-    margin-bottom:32px;background:var(--cream);
+  .quad-grid{
+    grid-template-columns:1fr;
   }
-  .home-row:nth-child(even){grid-template-columns:1fr 380px;}
-  .home-row:nth-child(even) .home-photo{order:2;}
-  @media(max-width:800px){
-    .home-row, .home-row:nth-child(even){grid-template-columns:1fr;}
-    .home-row:nth-child(even) .home-photo{order:0;}
+
+  .home-row,
+  .home-row:nth-of-type(even){
+    display:flex;
+    flex-direction:column;
+    gap:0;
+    margin-bottom:24px;
   }
+
+  .home-row:nth-of-type(even) .home-photo{
+    order:0;
+  }
+
   .home-photo{
-    background:repeating-linear-gradient(45deg,#eee2cd,#eee2cd 10px,#f5ecdc 10px,#f5ecdc 20px);
-    display:flex;align-items:center;justify-content:center;
-    min-height:220px;color:#a99a78;font-weight:700;font-size:.95rem;text-align:center;
-    padding:20px;
+    min-height:230px;
+    width:100%;
   }
-  .home-details{padding:28px 32px;display:flex;flex-direction:column;justify-content:center;}
-  .home-badge{
-    display:inline-block;background:var(--sage);color:#fff;font-size:.8rem;font-weight:700;
-    padding:4px 12px;border-radius:20px;margin-bottom:10px;width:fit-content;
+
+  .home-photo img{
+    width:100%;
+    height:230px;
+    min-height:230px;
+    object-fit:cover;
   }
-  .home-details h3{font-size:1.4rem;color:var(--sage-dark);margin-bottom:8px;}
-  .home-meta{color:#77796f;font-size:.95rem;margin-bottom:14px;}
-  .home-meta strong{color:var(--ink);}
-  .home-actions{display:flex;gap:12px;margin-top:12px;flex-wrap:wrap;}
+
+  .home-details{
+    padding:22px 20px 24px;
+  }
+
+  .home-details h3{
+    font-size:1.25rem;
+    line-height:1.35;
+  }
+
+  .home-meta{
+    font-size:.92rem;
+    line-height:1.5;
+  }
+
+  .home-actions{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:10px;
+  }
+
   .home-actions a{
-    font-size:.9rem;font-weight:700;padding:8px 16px;border-radius:6px;
-    border:1px solid var(--sage);color:var(--sage-dark);
+    text-align:center;
+    padding:11px 14px;
   }
-  .home-actions a.primary{background:var(--sage);color:#fff;border-color:var(--sage);}
 
-  /* TESTIMONIAL / TRUST STRIP */
   .trust-strip{
-    background:var(--sage-dark);color:#fff;text-align:center;padding:36px 24px;
+    padding:30px 16px;
   }
-  .trust-strip .items{
-    max-width:900px;margin:0 auto;display:flex;justify-content:space-around;
-    flex-wrap:wrap;gap:20px;
-  }
-  .trust-strip .item{font-weight:700;font-size:1rem;}
-  .trust-strip .item span{display:block;font-size:1.6rem;color:var(--terracotta);}
 
-  /* CONTACT */
-  #contact{background:var(--cream);}
-  .contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:40px;}
-  @media(max-width:750px){.contact-grid{grid-template-columns:1fr;}}
-  .contact-info p{margin-bottom:14px;font-size:1.02rem;}
-  .contact-info strong{color:var(--sage-dark);}
-  form{display:flex;flex-direction:column;gap:14px;}
-  input,textarea{
-    padding:12px 14px;border:1px solid var(--line);border-radius:6px;font-size:1rem;
-    font-family:inherit;
+  .trust-strip .items{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:22px;
   }
-  textarea{min-height:110px;resize:vertical;}
-  form button{
-    background:var(--terracotta);color:#fff;border:none;padding:14px;border-radius:6px;
-    font-weight:700;font-size:1rem;cursor:pointer;
+
+  .contact-grid{
+    grid-template-columns:1fr;
   }
-  form button:hover{background:#c47a51;}
+
+  .contact-info p{
+    font-size:.95rem;
+    overflow-wrap:anywhere;
+  }
 
   footer{
-    background:#2c2e28;color:#c9cbc0;text-align:center;padding:32px 24px;font-size:.9rem;
+    padding:26px 16px;
   }
-  footer a{font-weight:700;color:#fff;}
+}
 </style>
 </head>
+
 <body>
 
 <header>
   <div class="nav-wrap">
-    <div class="logo">First Brier <span>Care</span></div>
+
+    <div class="logo">
+      First Brier <span>Care</span>
+    </div>
+
     <nav>
       <ul>
         <li><a href="#about">Our Philosophy</a></li>
@@ -161,131 +547,416 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-    <a class="nav-phone" href="tel:4254446008">Call 425-444-6008</a>
+
+    <a class="nav-phone" href="tel:4254446008">
+      Call 425-444-6008
+    </a>
+
   </div>
 </header>
 
+<!-- HERO -->
 <section class="hero">
-  <h1>Compassionate, Family-Style Adult Home Care</h1>
-  <p>Small, licensed adult family homes where every resident is treated with the same dignity, respect, and kindness we'd want for our own loved ones.</p>
+
+  <h1>
+    Compassionate, Family-Style Adult Home Care
+  </h1>
+
+  <p>
+    Small, licensed adult family homes where every resident is treated
+    with the same dignity, respect, and kindness we'd want for our own
+    loved ones.
+  </p>
+
   <div class="hero-ctas">
-    <a class="btn btn-primary" href="#contact">Schedule a Visit</a>
-    <a class="btn btn-secondary" href="#homes">See Our Homes</a>
+    <a class="btn btn-primary" href="#contact">
+      Schedule a Visit
+    </a>
+
+    <a class="btn btn-secondary" href="#homes">
+      See Our Homes
+    </a>
   </div>
+
 </section>
 
 <!-- PHILOSOPHY -->
 <section id="about">
+
   <div class="section-inner">
+
     <h2>Philosophy &amp; Values</h2>
+
     <div class="card">
-      <p>Our mission is to do what is right and good. We are committed to treating every person with the same compassion, respect, and kindness that we would want for our own loved ones. We believe we are all called to serve one another with dignity, honoring the unique value and worth of every individual. Our philosophy of service is the foundation of everything we do — it guides our commitment to providing a safe and compassionate home where every resident is treated with personalized attention.</p>
+
+      <p>
+        Our mission is to do what is right and good. We are committed to
+        treating every person with the same compassion, respect, and kindness
+        that we would want for our own loved ones. We believe we are all
+        called to serve one another with dignity, honoring the unique value
+        and worth of every individual. Our philosophy of service is the
+        foundation of everything we do — it guides our commitment to providing
+        a safe and compassionate home where every resident is treated with
+        personalized attention.
+      </p>
+
     </div>
+
   </div>
+
 </section>
 
-<!-- WHAT MAKES US SPECIAL + ABOUT STAFF -->
+<!-- WHAT MAKES US SPECIAL -->
 <section style="background:#fff;">
+
   <div class="section-inner quad-grid">
+
     <div class="card">
+
       <h3>What Makes Us Special</h3>
-      <p>Unlike larger senior living communities, our adult family homes are each licensed to care for only four residents. This intimate setting allows us to truly tailor each resident's care, daily routine, and activities to their unique interests, preferences, and needs. Our small caregiver-to-resident ratio enables us to build genuine relationships, respond promptly to changing needs, and ensure each resident feels valued, comfortable, and at home.</p>
+
+      <p>
+        Unlike larger senior living communities, our adult family homes are
+        each licensed to care for only four residents. This intimate setting
+        allows us to truly tailor each resident's care, daily routine, and
+        activities to their unique interests, preferences, and needs. Our
+        small caregiver-to-resident ratio enables us to build genuine
+        relationships, respond promptly to changing needs, and ensure each
+        resident feels valued, comfortable, and at home.
+      </p>
+
     </div>
+
     <div class="card">
+
       <h3>About the Owners &amp; Staff</h3>
-      <p>Our manager holds a Bachelor of Science in Exercise and Nutritional Science with a minor in Psychology. Throughout her career in skilled nursing and home health settings, she has helped individuals maintain their independence, improve mobility, and enhance their overall quality of life — delivering care that is both highly skilled and genuinely compassionate.</p>
+
+      <p>
+        Our manager holds a Bachelor of Science in Exercise and Nutritional
+        Science with a minor in Psychology. Throughout her career in skilled
+        nursing and home health settings, she has helped individuals maintain
+        their independence, improve mobility, and enhance their overall
+        quality of life — delivering care that is both highly skilled and
+        genuinely compassionate.
+      </p>
+
     </div>
+
   </div>
+
 </section>
 
 <!-- DAILY LIFE -->
 <section>
+
   <div class="section-inner">
+
     <h2>Daily Life &amp; Routine</h2>
+
     <div class="card">
-      <p>A typical day varies depending on scheduled appointments and visits from family or friends, but most days follow a familiar and comforting routine. After breakfast, residents enjoy quiet time to relax or engage in individual activities. Following lunch, and again in the evening, we offer a variety of activities such as chair exercise, book reading, movies, arts, and other resident-selected activities that encourage engagement, enjoyment, and social interaction.</p>
+
+      <p>
+        A typical day varies depending on scheduled appointments and visits
+        from family or friends, but most days follow a familiar and comforting
+        routine. After breakfast, residents enjoy quiet time to relax or
+        engage in individual activities. Following lunch, and again in the
+        evening, we offer a variety of activities such as chair exercise,
+        book reading, movies, arts, and other resident-selected activities
+        that encourage engagement, enjoyment, and social interaction.
+      </p>
+
     </div>
+
   </div>
+
 </section>
 
 <!-- OUR HOMES -->
 <section id="homes">
+
   <div class="section-inner">
+
     <h2>Our Homes</h2>
-    <p class="subtitle">Three licensed adult family homes, each offering the same personalized standard of care. Scroll down to see all three.</p>
 
+    <p class="subtitle">
+      Three licensed adult family homes, each offering the same personalized
+      standard of care.
+    </p>
+
+    <!-- HOUSE 1 -->
     <div class="home-row">
-      <div class="home-photo">House 1 Photo<br>— coming soon —</div>
+
+      <div class="home-photo">
+
+        <div>
+          <strong>First Brier Senior &amp; Adult Care Home</strong>
+          <br>
+          Cover photo coming soon
+        </div>
+
+      </div>
+
       <div class="home-details">
+
         <span class="home-badge">House 1</span>
-        <h3>[House 1 Name / Address]</h3>
-        <p class="home-meta">Licensed capacity: <strong>4 residents</strong> &nbsp;|&nbsp; [Add a short highlight — e.g. quiet cul-de-sac, wheelchair accessible, private yard]</p>
+
+        <h3>
+          First Brier Senior &amp; Adult Care Home
+        </h3>
+
+        <p class="home-meta">
+
+          <strong>
+            2640 232nd St SW, Brier, WA 98036
+          </strong>
+
+          <br>
+
+          Licensed capacity:
+          <strong>4 residents</strong>
+
+        </p>
+
         <div class="home-actions">
-          <a class="primary" href="#contact">Ask About This Home</a>
-          <a href="#">Get Directions</a>
+
+          <a class="primary" href="#contact">
+            Ask About This Home
+          </a>
+
+          <a
+            href="https://www.google.com/maps/dir/?api=1&destination=2640%20232nd%20St%20SW%2C%20Brier%2C%20WA%2098036"
+            target="_blank"
+            rel="noopener"
+          >
+            Get Directions
+          </a>
+
         </div>
+
       </div>
+
     </div>
 
+    <!-- HOUSE 2 -->
     <div class="home-row">
-      <div class="home-photo">House 2 Photo<br>— coming soon —</div>
+
+      <div class="home-photo">
+
+        <div>
+          <strong>1st Peace Corner Senior Living, LLC</strong>
+          <br>
+          Cover photo coming soon
+        </div>
+
+      </div>
+
       <div class="home-details">
+
         <span class="home-badge">House 2</span>
-        <h3>[House 2 Name / Address]</h3>
-        <p class="home-meta">Licensed capacity: <strong>4 residents</strong> &nbsp;|&nbsp; [Add a short highlight]</p>
+
+        <h3>
+          1st Peace Corner Senior Living, LLC
+        </h3>
+
+        <p class="home-meta">
+
+          <strong>
+            23200 29th Ave W, Brier, WA 98036
+          </strong>
+
+          <br>
+
+          Licensed capacity:
+          <strong>4 residents</strong>
+
+        </p>
+
         <div class="home-actions">
-          <a class="primary" href="#contact">Ask About This Home</a>
-          <a href="#">Get Directions</a>
+
+          <a class="primary" href="#contact">
+            Ask About This Home
+          </a>
+
+          <a
+            href="https://www.google.com/maps/dir/?api=1&destination=23200%2029th%20Ave%20W%2C%20Brier%2C%20WA%2098036"
+            target="_blank"
+            rel="noopener"
+          >
+            Get Directions
+          </a>
+
         </div>
+
       </div>
+
     </div>
 
+    <!-- HOUSE 3 -->
     <div class="home-row">
-      <div class="home-photo">House 3 Photo<br>— coming soon —</div>
-      <div class="home-details">
-        <span class="home-badge">House 3</span>
-        <h3>[House 3 Name / Address]</h3>
-        <p class="home-meta">Licensed capacity: <strong>4 residents</strong> &nbsp;|&nbsp; [Add a short highlight]</p>
-        <div class="home-actions">
-          <a class="primary" href="#contact">Ask About This Home</a>
-          <a href="#">Get Directions</a>
+
+      <div class="home-photo">
+
+        <div>
+          <strong>House 3</strong>
+          <br>
+          Address and cover photo coming soon
         </div>
+
       </div>
+
+      <div class="home-details">
+
+        <span class="home-badge">House 3</span>
+
+        <h3>
+          House 3 — Coming Soon
+        </h3>
+
+        <p class="home-meta">
+
+          Licensed capacity:
+          <strong>4 residents</strong>
+
+          <br>
+
+          Address and additional details coming soon.
+
+        </p>
+
+        <div class="home-actions">
+
+          <a class="primary" href="#contact">
+            Ask About This Home
+          </a>
+
+        </div>
+
+      </div>
+
     </div>
 
   </div>
+
 </section>
 
+<!-- TRUST STRIP -->
 <div class="trust-strip">
+
   <div class="items">
-    <div class="item"><span>3</span>Licensed Homes</div>
-    <div class="item"><span>4</span>Residents per Home (max)</div>
-    <div class="item"><span>1:1</span>Personalized Care Approach</div>
+
+    <div class="item">
+      <span>3</span>
+      Licensed Homes
+    </div>
+
+    <div class="item">
+      <span>4</span>
+      Residents per Home (max)
+    </div>
+
+    <div class="item">
+      <span>1:1</span>
+      Personalized Care Approach
+    </div>
+
   </div>
+
 </div>
 
 <!-- CONTACT -->
 <section id="contact">
+
   <div class="section-inner contact-grid">
+
     <div class="contact-info">
-      <h2 style="text-align:left;">Drop Us a Line</h2>
-      <p><strong>Phone:</strong> <a href="tel:4254446008">425-444-6008</a> &nbsp;/&nbsp; <a href="tel:4255827516">425-582-7516</a></p>
-      <p><strong>Fax:</strong> 425-967-7937</p>
-      <p><strong>Email:</strong> <a href="mailto:t.akalu@firstbriercare.com">t.akalu@firstbriercare.com</a></p>
-      <p><strong>Homes:</strong> [Add directions/address for House 1, 2 &amp; 3 above]</p>
+
+      <h2 style="text-align:left;">
+        Drop Us a Line
+      </h2>
+
+      <p>
+        <strong>Phone:</strong>
+        <a href="tel:4254446008">425-444-6008</a>
+        /
+        <a href="tel:4255827516">425-582-7516</a>
+      </p>
+
+      <p>
+        <strong>Fax:</strong>
+        425-967-7937
+      </p>
+
+      <p>
+        <strong>Email:</strong>
+        <a href="mailto:t.akalu@firstbriercare.com">
+          t.akalu@firstbriercare.com
+        </a>
+      </p>
+
+      <p>
+        <strong>First Brier Senior &amp; Adult Care Home:</strong>
+        <br>
+        2640 232nd St SW, Brier, WA 98036
+      </p>
+
+      <p>
+        <strong>1st Peace Corner Senior Living, LLC:</strong>
+        <br>
+        23200 29th Ave W, Brier, WA 98036
+      </p>
+
+      <p>
+        <strong>House 3:</strong>
+        Address coming soon.
+      </p>
+
     </div>
+
     <form>
-      <input type="text" placeholder="Full Name" required>
-      <input type="email" placeholder="Email Address" required>
-      <input type="tel" placeholder="Phone Number">
-      <textarea placeholder="Tell us about your care needs..."></textarea>
-      <button type="submit">Send Message</button>
+
+      <input
+        type="text"
+        placeholder="Full Name"
+        required
+      >
+
+      <input
+        type="email"
+        placeholder="Email Address"
+        required
+      >
+
+      <input
+        type="tel"
+        placeholder="Phone Number"
+      >
+
+      <textarea
+        placeholder="Tell us about your care needs..."
+      ></textarea>
+
+      <button type="submit">
+        Send Message
+      </button>
+
     </form>
+
   </div>
+
 </section>
 
+<!-- FOOTER -->
 <footer>
-  <p>&copy; 2026 First Brier Care. All rights reserved. &nbsp;|&nbsp; <a href="tel:4254446008">425-444-6008</a></p>
+
+  <p>
+    &copy; 2026 First Brier Care.
+    All rights reserved.
+    |
+    <a href="tel:4254446008">
+      425-444-6008
+    </a>
+  </p>
+
 </footer>
 
 </body>
