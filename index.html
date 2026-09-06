@@ -7,415 +7,366 @@
 <title>MBK Senior Services, LLC</title>
 
 <style>
-:root{
-  --green:#58745d;
-  --dark-green:#3f5746;
-  --cream:#f8f6f0;
-  --orange:#d8895f;
-  --text:#292d2a;
-  --muted:#666d67;
-  --line:#e5e2da;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #4f5551;
+  background: #fff;
+  line-height: 1.6;
 }
 
-html{
-  scroll-behavior:smooth;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
-body{
-  font-family:Arial, Helvetica, sans-serif;
-  color:var(--text);
-  background:#fff;
-  line-height:1.6;
-}
-
-a{
-  color:inherit;
-  text-decoration:none;
-}
-
-img{
-  max-width:100%;
-  display:block;
+img {
+  display: block;
+  width: 100%;
 }
 
 /* HEADER */
-
-header{
-  background:#fff;
-  border-bottom:1px solid var(--line);
-  position:sticky;
-  top:0;
-  z-index:1000;
+header {
+  background: #fff;
+  border-bottom: 1px solid #e5e2dc;
 }
 
-.nav-wrap{
-  max-width:1150px;
-  margin:auto;
-  padding:18px 25px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:30px;
+.nav {
+  max-width: 1450px;
+  margin: auto;
+  min-height: 74px;
+  padding: 10px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
 }
 
-.logo{
-  font-size:1.35rem;
-  font-weight:700;
-  color:var(--green);
-  line-height:1.2;
+.logo {
+  line-height: 1.15;
 }
 
-.logo span{
-  color:var(--orange);
+.logo-main {
+  color: #42604b;
+  font-family: Georgia, serif;
+  font-size: 28px;
+  font-weight: bold;
 }
 
-nav ul{
-  list-style:none;
-  display:flex;
-  align-items:center;
-  gap:30px;
+.logo-sub {
+  color: #c9794e;
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 4px;
 }
 
-nav a{
-  font-size:.95rem;
-  font-weight:600;
-  transition:.2s ease;
+nav {
+  display: flex;
+  gap: 38px;
+  align-items: center;
 }
 
-nav a:hover{
-  color:var(--orange);
+nav a {
+  color: #333;
+  font-size: 16px;
+  padding: 8px 0;
 }
 
-.nav-phone{
-  background:var(--green);
-  color:#fff;
-  padding:11px 18px;
-  border-radius:4px;
-  font-weight:700;
-  white-space:nowrap;
+nav a:hover,
+nav a.active {
+  color: #c9794e;
+  border-bottom: 2px solid #c9794e;
+}
+
+.call-button {
+  background: #42604b;
+  color: white;
+  padding: 14px 24px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  white-space: nowrap;
 }
 
 /* HERO */
-
-.hero{
-  min-height:560px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:80px 25px;
-
-  background-image:
-    linear-gradient(
-      rgba(255,255,255,.76),
-      rgba(255,255,255,.76)
-    ),
-    url("hero-good-care.jpg");
-
-  background-size:cover;
-  background-position:center;
+.hero {
+  max-width: 1450px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 420px;
+  background: #f8f6f0;
 }
 
-.hero-inner{
-  max-width:850px;
-  margin:auto;
+.hero-text {
+  padding: 65px 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.hero-small{
-  color:var(--orange);
-  font-size:.95rem;
-  font-weight:700;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  margin-bottom:18px;
+.hero-label {
+  color: #c9794e;
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
 }
 
-.hero h1{
-  color:var(--green);
-  font-size:clamp(2.4rem,6vw,4.3rem);
-  line-height:1.1;
-  margin-bottom:25px;
+.hero h1 {
+  color: #42604b;
+  font-family: Georgia, serif;
+  font-size: clamp(42px, 4vw, 58px);
+  line-height: 1.05;
+  margin-bottom: 25px;
 }
 
-.hero p{
-  max-width:700px;
-  margin:0 auto 30px;
-  color:var(--muted);
-  font-size:1.15rem;
+.hero p {
+  font-size: 18px;
+  max-width: 650px;
+  margin-bottom: 25px;
 }
 
-.hero-button{
-  display:inline-block;
-  background:var(--orange);
-  color:#fff;
-  padding:14px 30px;
-  border-radius:4px;
-  font-weight:700;
+.hero-button {
+  background: #42604b;
+  color: white;
+  width: fit-content;
+  padding: 13px 27px;
+  border-radius: 5px;
+  font-weight: bold;
 }
 
-/* INTRO */
-
-.intro{
-  max-width:850px;
-  margin:auto;
-  padding:80px 25px 65px;
-  text-align:center;
+.hero-image {
+  min-height: 420px;
+  overflow: hidden;
 }
 
-.intro h2{
-  color:var(--green);
-  font-size:2rem;
-  margin-bottom:18px;
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.intro p{
-  color:var(--muted);
-  font-size:1.05rem;
+/* FEATURE CARDS */
+.features {
+  max-width: 1450px;
+  margin: auto;
+  padding: 15px 35px 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
 }
 
-/* FEATURES */
-
-.features{
-  max-width:1150px;
-  margin:auto;
-  padding:0 25px 80px;
+.card {
+  background: #fff;
+  border-radius: 7px;
+  overflow: hidden;
+  box-shadow: 0 1px 5px rgba(0,0,0,.08);
 }
 
-.feature{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  min-height:390px;
-  margin-bottom:35px;
-  border:1px solid var(--line);
-  background:#fff;
+.card-image {
+  height: 290px;
+  overflow: hidden;
 }
 
-.feature-image{
-  background:var(--cream);
-  min-height:390px;
-  overflow:hidden;
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.feature-image img{
-  width:100%;
-  height:100%;
-  min-height:390px;
-  object-fit:cover;
+.card-content {
+  padding: 25px 50px 30px;
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 25px;
+  align-items: start;
 }
 
-.feature-content{
-  padding:60px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
+.icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #42604b;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 42px;
 }
 
-.feature-content h2{
-  color:var(--green);
-  font-size:2rem;
-  margin-bottom:18px;
+.card h2 {
+  color: #42604b;
+  font-family: Georgia, serif;
+  font-size: 27px;
+  line-height: 1.15;
+  margin-bottom: 15px;
 }
 
-.feature-content h3{
-  color:var(--text);
-  font-size:1.25rem;
-  margin-bottom:14px;
+.card p {
+  font-size: 17px;
+  margin-bottom: 18px;
 }
 
-.feature-content p{
-  color:var(--muted);
-  font-size:1rem;
-  margin-bottom:25px;
-}
-
-.learn-more{
-  display:inline-block;
-  width:fit-content;
-  color:var(--orange);
-  font-weight:700;
-  border-bottom:2px solid var(--orange);
-  padding-bottom:3px;
-}
-
-.feature.reverse .feature-image{
-  order:2;
-}
-
-.feature.reverse .feature-content{
-  order:1;
+.learn {
+  color: #c9794e;
+  font-weight: bold;
+  border-bottom: 2px solid #c9794e;
+  padding-bottom: 3px;
 }
 
 /* PHOTO TOUR */
-
-.photo-section{
-  background:var(--cream);
-  padding:80px 25px;
+.photo-tour {
+  background: #f8f6f0;
+  padding: 70px 35px;
+  text-align: center;
 }
 
-.photo-inner{
-  max-width:1150px;
-  margin:auto;
-  text-align:center;
+.photo-tour h2 {
+  color: #42604b;
+  font-family: Georgia, serif;
+  font-size: 38px;
+  margin-bottom: 12px;
 }
 
-.photo-inner h2{
-  color:var(--green);
-  font-size:2rem;
-  margin-bottom:12px;
+.photo-tour p {
+  margin-bottom: 30px;
 }
 
-.photo-inner > p{
-  color:var(--muted);
-  margin-bottom:35px;
+.gallery {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
 }
 
-.photo-gallery{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
-  text-align:left;
-}
-
-.photo-gallery figure{
-  margin:0;
-  background:#fff;
-  border:1px solid var(--line);
-  overflow:hidden;
-}
-
-.photo-gallery img{
-  width:100%;
-  height:245px;
-  object-fit:cover;
+.gallery img {
+  height: 250px;
+  object-fit: cover;
+  border-radius: 6px;
 }
 
 /* CONTACT */
-
-.contact{
-  padding:80px 25px;
-  text-align:center;
+.contact {
+  padding: 65px 25px;
+  text-align: center;
 }
 
-.contact-inner{
-  max-width:800px;
-  margin:auto;
+.contact h2 {
+  color: #42604b;
+  font-family: Georgia, serif;
+  font-size: 38px;
+  margin-bottom: 15px;
 }
 
-.contact h2{
-  color:var(--green);
-  font-size:2rem;
-  margin-bottom:18px;
+.contact p {
+  margin: 7px 0;
 }
 
-.contact p{
-  color:var(--muted);
-  margin-bottom:10px;
-}
-
-.contact a{
-  color:var(--green);
-  font-weight:700;
+.contact a {
+  color: #42604b;
+  font-weight: bold;
 }
 
 /* FOOTER */
-
-footer{
-  background:#29352e;
-  color:#d4d9d5;
-  text-align:center;
-  padding:35px 20px;
-  font-size:.9rem;
-}
-
-footer strong,
-footer a{
-  color:#fff;
+footer {
+  background: #42604b;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
 }
 
 /* MOBILE */
+@media (max-width: 850px) {
 
-@media(max-width:800px){
-
-  .nav-wrap{
-    padding:15px 18px;
+  .nav {
+    padding: 14px 18px;
+    flex-wrap: wrap;
   }
 
-  nav{
-    display:none;
+  .logo-main {
+    font-size: 22px;
   }
 
-  .nav-phone{
-    font-size:.85rem;
-    padding:9px 12px;
+  .logo-sub {
+    font-size: 15px;
   }
 
-  .hero{
-    min-height:500px;
-    padding:70px 20px;
+  nav {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    gap: 20px;
   }
 
-  .hero h1{
-    font-size:2.6rem;
+  nav a {
+    font-size: 14px;
   }
 
-  .hero p{
-    font-size:1rem;
+  .call-button {
+    font-size: 14px;
+    padding: 11px 15px;
   }
 
-  .intro{
-    padding:60px 20px 45px;
+  .hero {
+    grid-template-columns: 1fr;
   }
 
-  .features{
-    padding:0 15px 60px;
+  .hero-text {
+    padding: 55px 25px;
+    text-align: center;
+    align-items: center;
   }
 
-  .feature,
-  .feature.reverse{
-    grid-template-columns:1fr;
+  .hero h1 {
+    font-size: 43px;
   }
 
-  .feature-image,
-  .feature.reverse .feature-image{
-    order:0;
-    min-height:260px;
+  .hero p {
+    font-size: 17px;
   }
 
-  .feature-image img{
-    min-height:260px;
+  .hero-image {
+    min-height: 330px;
   }
 
-  .feature-content,
-  .feature.reverse .feature-content{
-    order:1;
-    padding:40px 28px;
+  .features {
+    grid-template-columns: 1fr;
+    padding: 15px 18px 40px;
   }
 
-  .feature-content h2{
-    font-size:1.7rem;
+  .card-image {
+    height: 260px;
   }
 
-  .photo-section{
-    padding:60px 20px;
+  .card-content {
+    grid-template-columns: 75px 1fr;
+    gap: 18px;
+    padding: 25px 25px 30px;
   }
 
-  .photo-gallery{
-    grid-template-columns:1fr;
-    gap:15px;
+  .icon {
+    width: 62px;
+    height: 62px;
+    font-size: 30px;
   }
 
-  .photo-gallery img{
-    height:260px;
+  .card h2 {
+    font-size: 23px;
   }
 
-  .contact{
-    padding:60px 20px;
+  .card p {
+    font-size: 16px;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
   }
 }
 </style>
@@ -423,165 +374,142 @@ footer a{
 
 <body>
 
+<!-- HEADER -->
 <header>
-
-  <div class="nav-wrap">
+  <div class="nav">
 
     <a href="index.html" class="logo">
-      MBK Senior Services, LLC<br>
-      <span>Senior &amp; Adult Care Home</span>
+      <div class="logo-main">MBK Senior Services, LLC</div>
+      <div class="logo-sub">Senior &amp; Adult Care Home</div>
     </a>
 
     <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="#photos">Photo Tour</a></li>
-        <li><a href="#contact">Contact Us</a></li>
-      </ul>
+      <a href="index.html" class="active">Home</a>
+      <a href="services.html">Services</a>
+      <a href="#photos">Photo Tour</a>
+      <a href="#contact">Contact Us</a>
     </nav>
 
-    <a class="nav-phone" href="tel:4254446008">
-      Call 425-444-6008
+    <a href="tel:4254446008" class="call-button">
+      ☎ Call 425-444-6008
     </a>
 
   </div>
-
 </header>
 
 
 <!-- HERO -->
-
 <section class="hero">
 
-  <div class="hero-inner">
+  <div class="hero-text">
 
-    <div class="hero-small">
-      MBK Senior Services, LLC
+    <div class="hero-label">
+      A SAFE PLACE TO CALL HOME
     </div>
 
     <h1>
-      Compassionate Care.<br>
-      Comfortable Living.
+      Compassionate Care<br>
+      for a Brighter Tomorrow
     </h1>
 
     <p>
-      A warm, family-style adult care home where residents
-      receive personalized attention, dignity, respect,
-      and professional care.
+      Our experienced team provides personalized care while
+      helping residents maintain dignity, independence, and a
+      high quality of life in a comfortable, family-style home
+      environment.
     </p>
 
-    <a href="services.html#care" class="hero-button">
-      Learn More About Our Care
+    <a href="services.html" class="hero-button">
+      Learn More About Our Services &nbsp; →
     </a>
 
   </div>
 
-</section>
-
-
-<!-- INTRO -->
-
-<section class="intro">
-
-  <h2>
-    Providing Personalized Care
-  </h2>
-
-  <p>
-    Our goal is to create a safe, comfortable home where
-    every resident is treated with compassion and individualized
-    attention. With a small home environment, we are able to
-    focus on the unique needs, preferences, and daily routines
-    of each resident.
-  </p>
+  <!-- THIS IS ONLY THE HERO IMAGE -->
+  <div class="hero-image">
+    <img
+      src="hero-good-care.jpg"
+      alt="Good Care Brighter Days"
+    >
+  </div>
 
 </section>
 
 
-<!-- FEATURES -->
-
+<!-- TWO FRONT FEATURE CARDS -->
 <section class="features">
 
 
-  <!-- FIRST FRONT PICTURE: 25 -->
+  <!-- FIRST CARD = PHOTO 25 -->
+  <div class="card">
 
-  <div class="feature">
-
-    <div class="feature-image">
-
+    <div class="card-image">
       <img
         src="photo_2026-09-06_13-20-25.jpg"
         alt="MBK Senior Services home"
       >
-
     </div>
 
-    <div class="feature-content">
+    <div class="card-content">
 
-      <h2>
-        24/7 Professionalized Care
-      </h2>
+      <div class="icon">
+        ♡
+      </div>
 
-      <h3>
-        Compassionate support around the clock
-      </h3>
+      <div>
 
-      <p>
-        Our experienced caregivers provide attentive,
-        personalized care while helping residents maintain
-        dignity, comfort, independence, and a meaningful
-        daily lifestyle.
-      </p>
+        <h2>
+          24/7 Professionalized Care
+        </h2>
 
-      <a
-        class="learn-more"
-        href="services.html#care"
-      >
-        Learn More
-      </a>
+        <p>
+          We provide round-the-clock care and support
+          in a safe, comfortable, and nurturing environment.
+        </p>
+
+        <a href="services.html#care" class="learn">
+          Learn More &nbsp;→
+        </a>
+
+      </div>
 
     </div>
 
   </div>
 
 
-  <!-- SECOND FRONT PICTURE: 27 -->
+  <!-- SECOND CARD = PHOTO 27 -->
+  <div class="card">
 
-  <div class="feature reverse">
-
-    <div class="feature-image">
-
+    <div class="card-image">
       <img
         src="photo_2026-09-06_13-20-27.jpg"
-        alt="Comfortable home environment at MBK Senior Services"
+        alt="MBK Senior Services home"
       >
-
     </div>
 
-    <div class="feature-content">
+    <div class="card-content">
 
-      <h2>
-        The Best Care in a Comfortable Environment
-      </h2>
+      <div class="icon">
+        ⌂
+      </div>
 
-      <h3>
-        A home, not a hospital environment
-      </h3>
+      <div>
 
-      <p>
-        We believe quality care should feel personal and
-        comfortable. Our family-style setting is designed
-        to help residents feel at home while receiving
-        professional support tailored to their needs.
-      </p>
+        <h2>
+          The Best Care in a Comfortable Environment
+        </h2>
 
-      <a
-        class="learn-more"
-        href="services.html#about"
-      >
-        Learn More
-      </a>
+        <p>
+          Our home is designed to feel warm, safe, and
+          welcoming — a true home away from home.
+        </p>
+
+        <a href="services.html#about" class="learn">
+          Learn More &nbsp;→
+        </a>
+
+      </div>
 
     </div>
 
@@ -591,92 +519,41 @@ footer a{
 
 
 <!-- PHOTO TOUR -->
+<section id="photos" class="photo-tour">
 
-<section id="photos" class="photo-section">
+  <h2>
+    Photo Tour
+  </h2>
 
-  <div class="photo-inner">
+  <p>
+    Take a look inside our home and the environment
+    we provide for our residents.
+  </p>
 
-    <h2>
-      Photo Tour
-    </h2>
-
-    <p>
-      Take a look inside our home and the environment
-      we provide for our residents.
-    </p>
-
-    <div
-      id="photoGallery"
-      class="photo-gallery"
-    >
-
-      <p style="grid-column:1/-1;text-align:center;padding:40px;">
-        Loading our home photos...
-      </p>
-
-    </div>
-
-  </div>
+  <div id="gallery" class="gallery"></div>
 
 </section>
 
 
 <!-- CONTACT -->
-
 <section id="contact" class="contact">
 
-  <div class="contact-inner">
-
-    <h2>
-      Contact Us
-    </h2>
-
-    <p>
-      We would be happy to answer your questions
-      or arrange a visit.
-    </p>
-
-    <p>
-      <strong>
-        MBK Senior Services, LLC
-      </strong>
-    </p>
-
-    <p>
-      13526 27th Ave NE<br>
-      Seattle, WA 98125
-    </p>
-
-    <p>
-      Phone:
-      <a href="tel:4254446008">
-        425-444-6008
-      </a>
-    </p>
-
-    <p>
-      <a href="mailto:t.akalu@firstbriercare.com">
-        t.akalu@firstbriercare.com
-      </a>
-    </p>
-
-  </div>
-
-</section>
-
-
-<!-- FOOTER -->
-
-<footer>
+  <h2>
+    Contact Us
+  </h2>
 
   <p>
-    <strong>
-      MBK Senior Services, LLC
-    </strong>
+    We would be happy to answer your questions
+    or arrange a visit.
   </p>
 
   <p>
-    13526 27th Ave NE, Seattle, WA 98125
+    <strong>MBK Senior Services, LLC</strong>
+  </p>
+
+  <p>
+    13526 27th Ave NE<br>
+    Seattle, WA 98125
   </p>
 
   <p>
@@ -685,96 +562,74 @@ footer a{
     </a>
   </p>
 
-  <p style="margin-top:12px;">
-    &copy; 2026 MBK Senior Services, LLC.
-    All rights reserved.
+  <p>
+    <a href="mailto:t.akalu@firstbriercare.com">
+      t.akalu@firstbriercare.com
+    </a>
+  </p>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+  <strong>MBK Senior Services, LLC</strong>
+
+  <p>
+    13526 27th Ave NE, Seattle, WA 98125
+  </p>
+
+  <p>
+    © 2026 MBK Senior Services, LLC. All rights reserved.
   </p>
 
 </footer>
 
 
-<!-- LOAD PHOTO TOUR -->
-
+<!-- PHOTO TOUR LOADS THE OTHER PHOTOS -->
 <script>
+(async function () {
 
-(async function(){
+  const gallery = document.getElementById("gallery");
 
-  const gallery =
-    document.getElementById("photoGallery");
+  try {
 
-  try{
+    const response = await fetch(
+      "https://api.github.com/repos/Amanuelj/First-brier-care-website/contents/"
+    );
 
-    const response =
-      await fetch(
-        "https://api.github.com/repos/Amanuelj/First-brier-care-website/contents/"
-      );
+    const files = await response.json();
 
-    if(!response.ok){
-      throw new Error("Could not load photos");
-    }
-
-    const files =
-      await response.json();
-
-    const photos =
-      files
-        .filter(file =>
-          file.type === "file" &&
-          /\.(jpe?g|png|webp)$/i.test(file.name)
-        )
-        .sort((a,b) =>
-          a.name.localeCompare(
-            b.name,
-            undefined,
-            {numeric:true}
-          )
-        );
-
-    if(!photos.length){
-
-      gallery.innerHTML =
-        "<p style='grid-column:1/-1;text-align:center;padding:40px;'>Photos will appear here soon.</p>";
-
-      return;
-    }
+    const photos = files.filter(function (file) {
+      return file.type === "file" &&
+        /\.(jpg|jpeg|png|webp)$/i.test(file.name);
+    });
 
     gallery.innerHTML = "";
 
-    photos.forEach(function(photo,index){
+    photos.forEach(function (photo) {
 
-      const figure =
-        document.createElement("figure");
+      const img = document.createElement("img");
 
-      const image =
-        document.createElement("img");
+      img.src = photo.download_url;
+      img.alt = "MBK Senior Services photo";
+      img.loading = "lazy";
 
-      image.src =
-        photo.download_url;
-
-      image.alt =
-        "MBK Senior Services home photo " +
-        (index + 1);
-
-      image.loading =
-        index < 3 ? "eager" : "lazy";
-
-      figure.appendChild(image);
-
-      gallery.appendChild(figure);
+      gallery.appendChild(img);
 
     });
 
-  }catch(error){
+  } catch (error) {
 
     gallery.innerHTML =
-      "<p style='grid-column:1/-1;text-align:center;padding:40px;'>Our photo tour is temporarily unavailable.</p>";
+      "<p>Our photo tour is temporarily unavailable.</p>";
 
     console.error(error);
 
   }
 
 })();
-
 </script>
 
 </body>
