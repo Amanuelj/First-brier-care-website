@@ -101,20 +101,25 @@ nav a:hover{
   white-space:nowrap;
 }
 
-.nav-phone:hover{
-  background:var(--dark-green);
-}
-
 /* HERO */
 
 .hero{
-  background:var(--cream);
   min-height:560px;
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
   padding:80px 25px;
+
+  background-image:
+    linear-gradient(
+      rgba(255,255,255,.76),
+      rgba(255,255,255,.76)
+    ),
+    url("hero-good-care.jpg");
+
+  background-size:cover;
+  background-position:center;
 }
 
 .hero-inner{
@@ -152,10 +157,6 @@ nav a:hover{
   padding:14px 30px;
   border-radius:4px;
   font-weight:700;
-}
-
-.hero-button:hover{
-  background:#c9774e;
 }
 
 /* INTRO */
@@ -198,12 +199,6 @@ nav a:hover{
 .feature-image{
   background:var(--cream);
   min-height:390px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  color:#999;
-  font-weight:600;
   overflow:hidden;
 }
 
@@ -248,11 +243,6 @@ nav a:hover{
   padding-bottom:3px;
 }
 
-.learn-more:hover{
-  color:var(--green);
-  border-color:var(--green);
-}
-
 .feature.reverse .feature-image{
   order:2;
 }
@@ -280,7 +270,7 @@ nav a:hover{
   margin-bottom:12px;
 }
 
-.photo-inner p{
+.photo-inner > p{
   color:var(--muted);
   margin-bottom:35px;
 }
@@ -303,19 +293,6 @@ nav a:hover{
   width:100%;
   height:245px;
   object-fit:cover;
-  transition:transform .25s ease;
-}
-
-.photo-gallery figure:hover img{
-  transform:scale(1.03);
-}
-
-.gallery-loading,
-.gallery-error{
-  grid-column:1 / -1;
-  text-align:center;
-  color:var(--muted);
-  padding:50px 20px;
 }
 
 /* CONTACT */
@@ -356,10 +333,7 @@ footer{
   font-size:.9rem;
 }
 
-footer strong{
-  color:#fff;
-}
-
+footer strong,
 footer a{
   color:#fff;
 }
@@ -450,6 +424,7 @@ footer a{
 <body>
 
 <header>
+
   <div class="nav-wrap">
 
     <a href="index.html" class="logo">
@@ -471,9 +446,14 @@ footer a{
     </a>
 
   </div>
+
 </header>
 
+
+<!-- HERO -->
+
 <section class="hero">
+
   <div class="hero-inner">
 
     <div class="hero-small">
@@ -491,12 +471,16 @@ footer a{
       and professional care.
     </p>
 
-    <a href="#contact" class="hero-button">
-      Contact Us
+    <a href="services.html#care" class="hero-button">
+      Learn More About Our Care
     </a>
 
   </div>
+
 </section>
+
+
+<!-- INTRO -->
 
 <section class="intro">
 
@@ -514,17 +498,23 @@ footer a{
 
 </section>
 
+
+<!-- FEATURES -->
+
 <section class="features">
 
-  <!-- FIRST FEATURE -->
+
+  <!-- FIRST FRONT PICTURE: 25 -->
 
   <div class="feature">
 
     <div class="feature-image">
+
       <img
-        id="featureImage1"
+        src="photo_2026-09-06_13-20-25.jpg"
         alt="MBK Senior Services home"
       >
+
     </div>
 
     <div class="feature-content">
@@ -555,15 +545,18 @@ footer a{
 
   </div>
 
-  <!-- SECOND FEATURE -->
+
+  <!-- SECOND FRONT PICTURE: 27 -->
 
   <div class="feature reverse">
 
     <div class="feature-image">
+
       <img
-        id="featureImage2"
+        src="photo_2026-09-06_13-20-27.jpg"
         alt="Comfortable home environment at MBK Senior Services"
       >
+
     </div>
 
     <div class="feature-content">
@@ -596,6 +589,9 @@ footer a{
 
 </section>
 
+
+<!-- PHOTO TOUR -->
+
 <section id="photos" class="photo-section">
 
   <div class="photo-inner">
@@ -609,15 +605,23 @@ footer a{
       we provide for our residents.
     </p>
 
-    <div id="photoGallery" class="photo-gallery">
-      <p class="gallery-loading">
+    <div
+      id="photoGallery"
+      class="photo-gallery"
+    >
+
+      <p style="grid-column:1/-1;text-align:center;padding:40px;">
         Loading our home photos...
       </p>
+
     </div>
 
   </div>
 
 </section>
+
+
+<!-- CONTACT -->
 
 <section id="contact" class="contact">
 
@@ -633,7 +637,9 @@ footer a{
     </p>
 
     <p>
-      <strong>MBK Senior Services, LLC</strong>
+      <strong>
+        MBK Senior Services, LLC
+      </strong>
     </p>
 
     <p>
@@ -657,6 +663,9 @@ footer a{
   </div>
 
 </section>
+
+
+<!-- FOOTER -->
 
 <footer>
 
@@ -683,85 +692,73 @@ footer a{
 
 </footer>
 
+
+<!-- LOAD PHOTO TOUR -->
+
 <script>
 
-(async function loadHousePhotos(){
-
-  const repoApi =
-    "https://api.github.com/repos/Amanuelj/First-brier-care-website/contents/";
+(async function(){
 
   const gallery =
     document.getElementById("photoGallery");
 
-  const feature1 =
-    document.getElementById("featureImage1");
+  try{
 
-  const feature2 =
-    document.getElementById("featureImage2");
-
-  try {
-
-    const response = await fetch(repoApi, {
-      headers:{
-        "Accept":"application/vnd.github+json"
-      }
-    });
+    const response =
+      await fetch(
+        "https://api.github.com/repos/Amanuelj/First-brier-care-website/contents/"
+      );
 
     if(!response.ok){
-      throw new Error("Could not load the photo list.");
+      throw new Error("Could not load photos");
     }
 
-    const files = await response.json();
+    const files =
+      await response.json();
 
-    const photos = files
-      .filter(file =>
-        file.type === "file" &&
-        /\.(jpe?g|png|webp)$/i.test(file.name)
-      )
-      .sort((a,b) =>
-        a.name.localeCompare(
-          b.name,
-          undefined,
-          {numeric:true}
+    const photos =
+      files
+        .filter(file =>
+          file.type === "file" &&
+          /\.(jpe?g|png|webp)$/i.test(file.name)
         )
-      );
+        .sort((a,b) =>
+          a.name.localeCompare(
+            b.name,
+            undefined,
+            {numeric:true}
+          )
+        );
 
     if(!photos.length){
 
       gallery.innerHTML =
-        '<p class="gallery-error">Photos will appear here soon.</p>';
+        "<p style='grid-column:1/-1;text-align:center;padding:40px;'>Photos will appear here soon.</p>";
 
       return;
     }
 
-    feature1.src = photos[0].download_url;
-
-    if(photos[1]){
-      feature2.src = photos[1].download_url;
-    }else{
-      feature2.src = photos[0].download_url;
-    }
-
     gallery.innerHTML = "";
 
-    photos.forEach((photo,index)=>{
+    photos.forEach(function(photo,index){
 
       const figure =
         document.createElement("figure");
 
-      const img =
+      const image =
         document.createElement("img");
 
-      img.src = photo.download_url;
+      image.src =
+        photo.download_url;
 
-      img.alt =
+      image.alt =
         "MBK Senior Services home photo " +
         (index + 1);
 
-      img.loading =
+      image.loading =
         index < 3 ? "eager" : "lazy";
 
-      figure.appendChild(img);
+      figure.appendChild(image);
 
       gallery.appendChild(figure);
 
@@ -770,7 +767,7 @@ footer a{
   }catch(error){
 
     gallery.innerHTML =
-      '<p class="gallery-error">Our photo tour is temporarily unavailable. Please check back soon.</p>';
+      "<p style='grid-column:1/-1;text-align:center;padding:40px;'>Our photo tour is temporarily unavailable.</p>";
 
     console.error(error);
 
