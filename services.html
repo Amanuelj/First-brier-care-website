@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Services | MBK Senior Services, LLC</title>
+
+<style>
+:root{
+  --green:#58745d;
+  --dark-green:#3f5746;
+  --cream:#f8f6f0;
+  --orange:#d8895f;
+  --text:#292d2a;
+  --muted:#666d67;
+  --line:#e5e2da;
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial, Helvetica, sans-serif;
+  color:var(--text);
+  line-height:1.7;
+  background:#fff;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+/* HEADER */
+
+header{
+  background:#fff;
+  border-bottom:1px solid var(--line);
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+.nav-wrap{
+  max-width:1150px;
+  margin:auto;
+  padding:18px 25px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:25px;
+}
+
+.logo{
+  font-size:1.3rem;
+  font-weight:700;
+  color:var(--green);
+  line-height:1.2;
+}
+
+.logo span{
+  color:var(--orange);
+}
+
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:30px;
+}
+
+nav a{
+  font-size:.95rem;
+  font-weight:600;
+}
+
+nav a:hover{
+  color:var(--orange);
+}
+
+.call-button{
+  background:var(--green);
+  color:#fff;
+  padding:10px 16px;
+  border-radius:4px;
+  font-weight:700;
+  white-space:nowrap;
+}
+
+/* HERO */
+
+.page-hero{
+  background:var(--cream);
+  text-align:center;
+  padding:85px 25px;
+}
+
+.page-hero p:first-child{
+  color:var(--orange);
+  font-weight:700;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin-bottom:15px;
+}
+
+.page-hero h1{
+  color:var(--green);
+  font-size:clamp(2.4rem,5vw,3.7rem);
+  margin-bottom:18px;
+}
+
+.page-hero p:last-child{
+  max-width:700px;
+  margin:auto;
+  color:var(--muted);
+  font-size:1.1rem;
+}
+
+/* MAIN */
+
+.content{
+  max-width:1000px;
+  margin:auto;
+  padding:75px 25px;
+}
+
+.section{
+  margin-bottom:75px;
+  scroll-margin-top:100px;
+}
+
+.section h2{
+  color:var(--green);
+  font-size:2rem;
+  margin-bottom:20px;
+}
+
+.section h3{
+  color:var(--dark-green);
+  font-size:1.3rem;
+  margin-top:28px;
+  margin-bottom:10px;
+}
+
+.section p{
+  color:var(--muted);
+  margin-bottom:16px;
+}
+
+/* SERVICES GRID */
+
+.service-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+  margin-top:30px;
+}
+
+.service-card{
+  border:1px solid var(--line);
+  padding:28px;
+  background:#fff;
+}
+
+.service-card h3{
+  margin-top:0;
+  color:var(--green);
+  font-size:1.2rem;
+}
+
+.service-card p{
+  margin-bottom:0;
+}
+
+/* LIST */
+
+.service-list{
+  margin-top:25px;
+  padding-left:22px;
+}
+
+.service-list li{
+  margin-bottom:12px;
+  color:var(--muted);
+}
+
+/* ABOUT */
+
+.about-box{
+  background:var(--cream);
+  padding:35px;
+  margin-top:25px;
+}
+
+/* CONTACT */
+
+.contact{
+  background:var(--cream);
+  text-align:center;
+  padding:70px 25px;
+}
+
+.contact h2{
+  color:var(--green);
+  font-size:2rem;
+  margin-bottom:15px;
+}
+
+.contact p{
+  color:var(--muted);
+  margin-bottom:8px;
+}
+
+/* FOOTER */
+
+footer{
+  background:#29352e;
+  color:#d4d9d5;
+  text-align:center;
+  padding:35px 20px;
+  font-size:.9rem;
+}
+
+footer strong{
+  color:#fff;
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+  nav{
+    display:none;
+  }
+
+  .nav-wrap{
+    padding:15px 18px;
+  }
+
+  .call-button{
+    font-size:.85rem;
+    padding:9px 12px;
+  }
+
+  .page-hero{
+    padding:65px 20px;
+  }
+
+  .content{
+    padding:55px 20px;
+  }
+
+  .service-grid{
+    grid-template-columns:1fr;
+  }
+
+  .about-box{
+    padding:25px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+  <div class="nav-wrap">
+
+    <a href="index.html" class="logo">
+      MBK Senior Services, LLC<br>
+      <span>Senior &amp; Adult Care Home</span>
+    </a>
+
+    <nav>
+      <ul>
+        <li>
+          <a href="index.html">Home</a>
+        </li>
+
+        <li>
+          <a href="services.html">Services</a>
+        </li>
+
+        <li>
+          <a href="index.html#photos">Photo Tour</a>
+        </li>
+
+        <li>
+          <a href="index.html#contact">Contact Us</a>
+        </li>
+      </ul>
+    </nav>
+
+    <a class="call-button" href="tel:4254446008">
+      Call Us
+    </a>
+
+  </div>
+
+</header>
+
+
+<section class="page-hero">
+
+  <p>MBK Senior Services, LLC</p>
+
+  <h1>
+    Our Services
+  </h1>
+
+  <p>
+    Personalized care and support in a comfortable,
+    family-style home environment.
+  </p>
+
+</section>
+
+
+<main class="content">
+
+
+  <!-- 24/7 CARE -->
+
+  <section id="care" class="section">
+
+    <h2>
+      24/7 Professionalized Care
+    </h2>
+
+    <p>
+      At MBK Senior Services, LLC, we provide attentive
+      care throughout the day and night. Our goal is to
+      make sure residents feel safe, respected, comfortable,
+      and supported.
+    </p>
+
+    <p>
+      Care is personalized according to each resident's
+      individual needs, preferences, abilities, and daily
+      routine.
+    </p>
+
+
+    <div class="service-grid">
+
+      <div class="service-card">
+
+        <h3>
+          Personal Care &amp; Daily Living
+        </h3>
+
+        <p>
+          Support with everyday personal care and activities
+          while encouraging residents to maintain as much
+          independence as possible.
+        </p>
+
+      </div>
+
+
+      <div class="service-card">
+
+        <h3>
+          Medication Support
+        </h3>
+
+        <p>
+          Assistance with medication routines according to
+          the resident's care needs and applicable care
+          requirements.
+        </p>
+
+      </div>
+
+
+      <div class="service-card">
+
+        <h3>
+          Meals &amp; Nutrition
+        </h3>
+
+        <p>
+          Nutritious meals and snacks are provided while
+          considering individual preferences and dietary
+          needs.
+        </p>
+
+      </div>
+
+
+      <div class="service-card">
+
+        <h3>
+          Housekeeping &amp; Laundry
+        </h3>
+
+        <p>
+          We help maintain a clean, comfortable, and
+          welcoming home environment.
+        </p>
+
+      </div>
+
+
+      <div class="service-card">
+
+        <h3>
+          Appointments &amp; Health Support
+        </h3>
+
+        <p>
+          We help residents stay organized with appointments
+          and coordinate care needs as appropriate.
+        </p>
+
+      </div>
+
+
+      <div class="service-card">
+
+        <h3>
+          Activities &amp; Engagement
+        </h3>
+
+        <p>
+          Residents are encouraged to participate in
+          activities that support social connection,
+          movement, enjoyment, and quality of life.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- DAILY SUPPORT -->
+
+  <section class="section">
+
+    <h2>
+      Personalized Daily Support
+    </h2>
+
+    <p>
+      Every resident has different needs. Our approach is
+      centered around individualized attention and respectful
+      support.
+    </p>
+
+    <ul class="service-list">
+
+      <li>
+        Assistance with activities of daily living
+      </li>
+
+      <li>
+        Monitoring and encouragement when needed
+      </li>
+
+      <li>
+        Support with mobility and safe movement
+      </li>
+
+      <li>
+        Personalized routines and daily schedules
+      </li>
+
+      <li>
+        Social interaction and companionship
+      </li>
+
+      <li>
+        Support for maintaining independence
+      </li>
+
+      <li>
+        Communication with families and appropriate
+        care professionals
+      </li>
+
+    </ul>
+
+  </section>
+
+
+  <!-- ABOUT / ENVIRONMENT -->
+
+  <section id="about" class="section">
+
+    <h2>
+      The Best Care in a Comfortable Environment
+    </h2>
+
+    <p>
+      We believe that quality care should feel personal.
+      Our home environment is designed to provide comfort,
+      safety, dignity, and a sense of belonging.
+    </p>
+
+    <div class="about-box">
+
+      <h3>
+        About Our Home
+      </h3>
+
+      <p>
+        MBK Senior Services, LLC provides care in a small
+        home setting where residents can receive
+        individualized attention and develop genuine
+        relationships with caregivers.
+      </p>
+
+      <h3>
+        What Makes Us Special
+      </h3>
+
+      <p>
+        Our small home environment allows us to focus on
+        each resident rather than treating everyone the
+        same. We value kindness, respect, patience, and
+        personalized attention.
+      </p>
+
+      <h3>
+        Our Philosophy
+      </h3>
+
+      <p>
+        We believe every person deserves to be treated with
+        compassion, respect, and dignity. We strive to do
+        what is right and good for each resident while
+        recognizing their individual value and preferences.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- DAILY LIFE -->
+
+  <section class="section">
+
+    <h2>
+      Daily Life
+    </h2>
+
+    <p>
+      We encourage residents to enjoy a balanced daily
+      routine that includes care, rest, social connection,
+      activities, and personal choice.
+    </p>
+
+    <p>
+      Depending on individual preferences and schedules,
+      a typical day may include breakfast, quiet time,
+      lunch, appointments or family visits, chair
+      exercises, reading, movies, arts and crafts, and
+      activities selected by residents.
+    </p>
+
+    <p>
+      Our goal is to create a home where residents can
+      feel comfortable and participate in activities that
+      bring meaning and enjoyment to their day.
+    </p>
+
+  </section>
+
+
+  <!-- STAFF -->
+
+  <section class="section">
+
+    <h2>
+      About Owners &amp; Staff
+    </h2>
+
+    <p>
+      Our care team is committed to providing respectful,
+      dependable, and individualized support to every
+      resident.
+    </p>
+
+    <p>
+      Management has a background that includes a Bachelor
+      of Science in Exercise and Nutritional Science with
+      a minor in Psychology, along with experience in
+      skilled nursing and home health.
+    </p>
+
+    <p>
+      This background supports our focus on helping
+      residents maintain independence, mobility, comfort,
+      and quality of life.
+    </p>
+
+  </section>
+
+</main>
+
+
+<section class="contact">
+
+  <h2>
+    Contact MBK Senior Services
+  </h2>
+
+  <p>
+    We welcome the opportunity to answer your questions
+    and discuss your care needs.
+  </p>
+
+</section>
+
+
+<footer>
+
+  <p>
+    <strong>
+      MBK Senior Services, LLC
+    </strong>
+  </p>
+
+  <p>
+    13526 27th Ave NE, Seattle, WA 98125
+  </p>
+
+  <p style="margin-top:12px;">
+    &copy; 2026 MBK Senior Services, LLC.
+    All rights reserved.
+  </p>
+
+</footer>
+
+</body>
+</html>
