@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>First Brier Senior & Adult Care Home</title>
+<title>MBK Senior Services, LLC</title>
 
 <style>
 :root{
@@ -44,10 +44,7 @@ img{
   display:block;
 }
 
-
-/* =========================
-   HEADER
-========================= */
+/* HEADER */
 
 header{
   background:#fff;
@@ -108,10 +105,7 @@ nav a:hover{
   background:var(--dark-green);
 }
 
-
-/* =========================
-   HERO
-========================= */
+/* HERO */
 
 .hero{
   background:var(--cream);
@@ -164,10 +158,7 @@ nav a:hover{
   background:#c9774e;
 }
 
-
-/* =========================
-   INTRO
-========================= */
+/* INTRO */
 
 .intro{
   max-width:850px;
@@ -187,11 +178,7 @@ nav a:hover{
   font-size:1.05rem;
 }
 
-
-/* =========================
-   FEATURE SECTIONS
-   BRIERWOOD-STYLE
-========================= */
+/* FEATURES */
 
 .features{
   max-width:1150px;
@@ -217,6 +204,14 @@ nav a:hover{
   text-align:center;
   color:#999;
   font-weight:600;
+  overflow:hidden;
+}
+
+.feature-image img{
+  width:100%;
+  height:100%;
+  min-height:390px;
+  object-fit:cover;
 }
 
 .feature-content{
@@ -258,9 +253,6 @@ nav a:hover{
   border-color:var(--green);
 }
 
-
-/* SECOND FEATURE */
-
 .feature.reverse .feature-image{
   order:2;
 }
@@ -269,10 +261,7 @@ nav a:hover{
   order:1;
 }
 
-
-/* =========================
-   PHOTO TOUR
-========================= */
+/* PHOTO TOUR */
 
 .photo-section{
   background:var(--cream);
@@ -296,21 +285,40 @@ nav a:hover{
   margin-bottom:35px;
 }
 
-.photo-placeholder{
-  min-height:280px;
-  background:#fff;
-  border:1px solid var(--line);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#999;
-  font-weight:600;
+.photo-gallery{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  text-align:left;
 }
 
+.photo-gallery figure{
+  margin:0;
+  background:#fff;
+  border:1px solid var(--line);
+  overflow:hidden;
+}
 
-/* =========================
-   CONTACT
-========================= */
+.photo-gallery img{
+  width:100%;
+  height:245px;
+  object-fit:cover;
+  transition:transform .25s ease;
+}
+
+.photo-gallery figure:hover img{
+  transform:scale(1.03);
+}
+
+.gallery-loading,
+.gallery-error{
+  grid-column:1 / -1;
+  text-align:center;
+  color:var(--muted);
+  padding:50px 20px;
+}
+
+/* CONTACT */
 
 .contact{
   padding:80px 25px;
@@ -338,10 +346,7 @@ nav a:hover{
   font-weight:700;
 }
 
-
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 
 footer{
   background:#29352e;
@@ -359,10 +364,7 @@ footer a{
   color:#fff;
 }
 
-
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 
 @media(max-width:800px){
 
@@ -411,6 +413,10 @@ footer a{
     min-height:260px;
   }
 
+  .feature-image img{
+    min-height:260px;
+  }
+
   .feature-content,
   .feature.reverse .feature-content{
     order:1;
@@ -425,6 +431,15 @@ footer a{
     padding:60px 20px;
   }
 
+  .photo-gallery{
+    grid-template-columns:1fr;
+    gap:15px;
+  }
+
+  .photo-gallery img{
+    height:260px;
+  }
+
   .contact{
     padding:60px 20px;
   }
@@ -432,66 +447,37 @@ footer a{
 </style>
 </head>
 
-
 <body>
 
-
-<!-- =========================
-     HEADER
-========================= -->
-
 <header>
-
   <div class="nav-wrap">
 
     <a href="index.html" class="logo">
-      First Brier<br>
+      MBK Senior Services, LLC<br>
       <span>Senior &amp; Adult Care Home</span>
     </a>
 
     <nav>
       <ul>
-        <li>
-          <a href="index.html">Home</a>
-        </li>
-
-        <li>
-          <a href="services.html">Services</a>
-        </li>
-
-        <li>
-          <a href="#photos">Photo Tour</a>
-        </li>
-
-        <li>
-          <a href="#contact">Contact Us</a>
-        </li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="#photos">Photo Tour</a></li>
+        <li><a href="#contact">Contact Us</a></li>
       </ul>
     </nav>
 
-    <a
-      class="nav-phone"
-      href="tel:4254446008"
-    >
+    <a class="nav-phone" href="tel:4254446008">
       Call 425-444-6008
     </a>
 
   </div>
-
 </header>
 
-
-
-<!-- =========================
-     HERO
-========================= -->
-
 <section class="hero">
-
   <div class="hero-inner">
 
     <div class="hero-small">
-      First Brier Senior &amp; Adult Care Home
+      MBK Senior Services, LLC
     </div>
 
     <h1>
@@ -505,22 +491,12 @@ footer a{
       and professional care.
     </p>
 
-    <a
-      href="#contact"
-      class="hero-button"
-    >
+    <a href="#contact" class="hero-button">
       Contact Us
     </a>
 
   </div>
-
 </section>
-
-
-
-<!-- =========================
-     INTRO
-========================= -->
 
 <section class="intro">
 
@@ -538,26 +514,18 @@ footer a{
 
 </section>
 
-
-
-<!-- =========================
-     FEATURE 1
-========================= -->
-
 <section class="features">
 
+  <!-- FIRST FEATURE -->
 
   <div class="feature">
 
     <div class="feature-image">
-
-      <div>
-        <strong>24/7 Professionalized Care</strong><br>
-        <span>Photo coming soon</span>
-      </div>
-
+      <img
+        id="featureImage1"
+        alt="MBK Senior Services home"
+      >
     </div>
-
 
     <div class="feature-content">
 
@@ -587,23 +555,16 @@ footer a{
 
   </div>
 
-
-
-  <!-- =========================
-       FEATURE 2
-  ========================= -->
+  <!-- SECOND FEATURE -->
 
   <div class="feature reverse">
 
     <div class="feature-image">
-
-      <div>
-        <strong>A Comfortable Home Environment</strong><br>
-        <span>Photo coming soon</span>
-      </div>
-
+      <img
+        id="featureImage2"
+        alt="Comfortable home environment at MBK Senior Services"
+      >
     </div>
-
 
     <div class="feature-content">
 
@@ -633,19 +594,9 @@ footer a{
 
   </div>
 
-
 </section>
 
-
-
-<!-- =========================
-     PHOTO TOUR
-========================= -->
-
-<section
-  id="photos"
-  class="photo-section"
->
+<section id="photos" class="photo-section">
 
   <div class="photo-inner">
 
@@ -658,26 +609,17 @@ footer a{
       we provide for our residents.
     </p>
 
-    <div class="photo-placeholder">
-
-      Photos coming soon
-
+    <div id="photoGallery" class="photo-gallery">
+      <p class="gallery-loading">
+        Loading our home photos...
+      </p>
     </div>
 
   </div>
 
 </section>
 
-
-
-<!-- =========================
-     CONTACT
-========================= -->
-
-<section
-  id="contact"
-  class="contact"
->
+<section id="contact" class="contact">
 
   <div class="contact-inner">
 
@@ -691,12 +633,12 @@ footer a{
     </p>
 
     <p>
-      <strong>First Brier Senior &amp; Adult Care Home</strong>
+      <strong>MBK Senior Services, LLC</strong>
     </p>
 
     <p>
-      2640 232nd St SW<br>
-      Brier, WA 98036
+      13526 27th Ave NE<br>
+      Seattle, WA 98125
     </p>
 
     <p>
@@ -716,22 +658,16 @@ footer a{
 
 </section>
 
-
-
-<!-- =========================
-     FOOTER
-========================= -->
-
 <footer>
 
   <p>
     <strong>
-      First Brier Senior &amp; Adult Care Home
+      MBK Senior Services, LLC
     </strong>
   </p>
 
   <p>
-    2640 232nd St SW, Brier, WA 98036
+    13526 27th Ave NE, Seattle, WA 98125
   </p>
 
   <p>
@@ -741,12 +677,108 @@ footer a{
   </p>
 
   <p style="margin-top:12px;">
-    &copy; 2026 First Brier Senior &amp; Adult Care Home.
+    &copy; 2026 MBK Senior Services, LLC.
     All rights reserved.
   </p>
 
 </footer>
 
+<script>
+
+(async function loadHousePhotos(){
+
+  const repoApi =
+    "https://api.github.com/repos/Amanuelj/First-brier-care-website/contents/";
+
+  const gallery =
+    document.getElementById("photoGallery");
+
+  const feature1 =
+    document.getElementById("featureImage1");
+
+  const feature2 =
+    document.getElementById("featureImage2");
+
+  try {
+
+    const response = await fetch(repoApi, {
+      headers:{
+        "Accept":"application/vnd.github+json"
+      }
+    });
+
+    if(!response.ok){
+      throw new Error("Could not load the photo list.");
+    }
+
+    const files = await response.json();
+
+    const photos = files
+      .filter(file =>
+        file.type === "file" &&
+        /\.(jpe?g|png|webp)$/i.test(file.name)
+      )
+      .sort((a,b) =>
+        a.name.localeCompare(
+          b.name,
+          undefined,
+          {numeric:true}
+        )
+      );
+
+    if(!photos.length){
+
+      gallery.innerHTML =
+        '<p class="gallery-error">Photos will appear here soon.</p>';
+
+      return;
+    }
+
+    feature1.src = photos[0].download_url;
+
+    if(photos[1]){
+      feature2.src = photos[1].download_url;
+    }else{
+      feature2.src = photos[0].download_url;
+    }
+
+    gallery.innerHTML = "";
+
+    photos.forEach((photo,index)=>{
+
+      const figure =
+        document.createElement("figure");
+
+      const img =
+        document.createElement("img");
+
+      img.src = photo.download_url;
+
+      img.alt =
+        "MBK Senior Services home photo " +
+        (index + 1);
+
+      img.loading =
+        index < 3 ? "eager" : "lazy";
+
+      figure.appendChild(img);
+
+      gallery.appendChild(figure);
+
+    });
+
+  }catch(error){
+
+    gallery.innerHTML =
+      '<p class="gallery-error">Our photo tour is temporarily unavailable. Please check back soon.</p>';
+
+    console.error(error);
+
+  }
+
+})();
+
+</script>
 
 </body>
 </html>
